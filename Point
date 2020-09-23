@@ -1,7 +1,7 @@
 create table fish
 (
 	FIS_IDX		int NOT NULL,
-    FIS_DT		date	NOT NULL,
+    FIS_DT		date	 NULL,
     FIS_SPEC	varchar(200) NULL,
     FIS_SIZE	decimal		NULL,
     FIS_ADDR	varchar(500)	NULL,
