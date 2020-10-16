@@ -1,3 +1,4 @@
+#데이터 분석 예시
 SELECT * from fish;
 SELECT * FROM FISH WHERE FIS_ADDR LIKE '홍천%' AND FIS_NUM IN(1); #홍천에서 잡은내용
 SELECT * FROM FISH WHERE FIS_SPEC LIKE '쏘가리%'; #쏘가리 잡은곳
@@ -14,6 +15,7 @@ SELECT FIS_SPEC, FIS_SIZE, FIS_NUM, FIS_ADDR FROM FISH WHERE FIS_SIZE >=40 AND F
 
 #grant all on mysql.* to db_test@localhost
 
+#해양청 실측조류 데이터 
 CREATE TABLE tidalcurrent (
 	OBS_TIME DATETIME NULL DEFAULT NULL,
 	current_direct FLOAT(12) NULL DEFAULT NULL,
@@ -24,6 +26,7 @@ CREATE TABLE tidalcurrent (
 )
 ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+#해양청 실측풍향 테이블 생성
 CREATE TABLE wind (
 	record_time DATETIME NULL DEFAULT NULL,
 	wind_dir FLOAT(12) NULL DEFAULT NULL,
@@ -36,6 +39,7 @@ ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 SELECT * FROM wind;
 
+#해양청 실측파고 테이블 생성
 CREATE TABLE wave (
 	record_time DATETIME NULL DEFAULT NULL,
 	wave_height FLOAT(12) NULL DEFAULT NULL,
@@ -47,6 +51,7 @@ ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 SELECT * FROM wave;
 
+#해양청 실측조위 테이블 생성
 CREATE TABLE tidelevel (
 	record_time DATETIME NULL DEFAULT NULL,
 	tide_level FLOAT(12) NULL DEFAULT NULL,
@@ -58,6 +63,7 @@ ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 SELECT * FROM tidelevel;
 
+#해양청 실측수온 테이블 생성
 CREATE TABLE temp (
 	record_time DATETIME NULL DEFAULT NULL,
 	water_temp FLOAT(12) NULL DEFAULT NULL,
@@ -69,6 +75,7 @@ ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 SELECT * FROM temp;
 
+#해양청 
 CREATE TABLE tidalpre (
 	tph_level INT NULL DEFAULT NULL,
 	tph_time DATETIME NULL DEFAULT NULL,
@@ -83,6 +90,7 @@ DROP TABLE tidalpre;
 
 SELECT * FROM tidalpre;
 
+#기상청 육상예보 테이블 생성
 CREATE TABLE ASOS (
 	regld VARCHAR(30) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
 	tm DATETIME NULL DEFAULT NULL,
@@ -111,7 +119,7 @@ CREATE TABLE ASOS (
 )
 ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
-set @@global.sql_mode = "ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+# set @@global.sql_mode = "ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
 
 DROP TABLE asos;
 
