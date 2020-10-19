@@ -1,14 +1,15 @@
 create table fish
 (
 	FIS_IDX		int NOT NULL,
-    FIS_DT		date	 NULL,
-    FIS_SPEC	varchar(200) NULL,
-    FIS_SIZE	decimal		NULL,
-    FIS_ADDR	varchar(500)	NULL,
-    FIS_NUM		INT			NULL,
-    LAT			float  NULL,
-    LON			float  NULL
-);
+    FIS_DT		date	 NULL DEFAULT NULL,
+    FIS_SPEC	varchar(200) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+    FIS_SIZE	decimal		NULL DEFAULT NULL,
+    FIS_ADDR	varchar(500)	NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+    FIS_NUM		INT			NULL DEFAULT NULL,
+    LAT			float  NULL DEFAULT NULL,
+    LON			float  NULL DEFAULT NULL
+)
+ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 show tables; # 테이블 확인
 desc fish; #특정 스키마 확인
